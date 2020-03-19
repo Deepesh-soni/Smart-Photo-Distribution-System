@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' show get;
+import 'package:spds/UploadScreen.dart';
 import 'ImageList.dart';
 import 'ImageModel.dart';
 import 'dart:convert';
@@ -51,8 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
             builder: (BuildContext context) {
               return IconButton(
                 icon: const Icon(Icons.menu),
-                onPressed: () {
-                 },
+                onPressed: fetchImage,
               );   
             },
           ),
@@ -62,7 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ImageList(images:image),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: fetchImage,
+        onPressed: () {
+          Navigator.pushNamed(context, UploadScreen.id);                  
+        },
         highlightElevation: 10.0,
         elevation: 10.0,
         backgroundColor: Color(0xFFE76C6A),

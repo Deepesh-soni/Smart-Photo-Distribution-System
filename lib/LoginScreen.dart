@@ -3,6 +3,7 @@ import 'package:spds/Button.dart';
 import 'HomeScreen.dart';
 import 'Constants.dart';
 import'AppLogo.dart';
+import 'SignupPage.dart';
 
 class LoginScreen extends StatefulWidget{
 
@@ -77,7 +78,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           
                     Button(
                       title: 'Sign Up',
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.pushNamed(context, SingupPage.id);
+                      },
                     ),
                   ],       
                 )

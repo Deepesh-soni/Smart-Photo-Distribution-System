@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:spds/SignupPage.dart';
 import 'Button.dart';
 import 'package:shadow/shadow.dart';
 import 'LoginScreen.dart';
@@ -69,7 +70,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       SizedBox(width: 30.0),
                       Button(title: "Sign Up",
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.pushNamed(context, SingupPage.id);
+                        },
                       ),
                     ],                
                   ),

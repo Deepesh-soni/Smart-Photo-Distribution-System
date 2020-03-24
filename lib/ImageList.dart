@@ -25,8 +25,6 @@ class ImageList extends StatelessWidget{
                 );
               }, 
             itemCount: images.length,
-            // mainAxisSpacing: 8.0,
-            // crossAxisSpacing: 8.0,
 
             )
           ],

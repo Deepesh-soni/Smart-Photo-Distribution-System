@@ -28,8 +28,7 @@ dependencies:
   http: ^0.12.0+4
   image_cropper: ^1.2.1
   multi_image_picker: ^4.6.3
-
-
+  image_picker: ^0.6.3+4
   shadow: ^0.1.5
 
 dev_dependencies:

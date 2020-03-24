@@ -24,7 +24,7 @@ class _UploadScreenState extends State<UploadScreen> {
   }
 
   Widget buildGridView() {
-    if (images != null)
+    if (images != null && images.isNotEmpty)
       return GridView.count(
         crossAxisCount: 2,
         children: List.generate(images.length, (index) {
@@ -37,8 +37,9 @@ class _UploadScreenState extends State<UploadScreen> {
               height: 300,
             ),
           );
-        }),
-      );
+        }
+      ),
+    );
     else
       return Container(
         color: Colors.white,

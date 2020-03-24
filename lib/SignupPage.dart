@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'Button.dart';
 import 'HomeScreen.dart';
 
-class SingupPage extends StatefulWidget{
+class SignupPage extends StatefulWidget{
 
   static final String id='Signup_page';
-  _SingupPageState createState() => _SingupPageState();
+  _SignupPageState createState() => _SignupPageState();
 
 }
 
-class _SingupPageState extends State<SingupPage> {
+class _SignupPageState extends State<SignupPage> {
 
   String _email;
   String _password;
@@ -58,7 +58,9 @@ class _SingupPageState extends State<SingupPage> {
                   });
                 }
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 15.0),
+              
+              
               Button(
                 title: 'Sign Up',
                 onPressed: (){

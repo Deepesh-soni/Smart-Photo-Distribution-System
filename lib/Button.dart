@@ -9,14 +9,21 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return MaterialButton(
       onPressed: onPressed,
       color: Colors.white,
-      child: Text(title),
+      child: Text(
+        title,
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+        ),
+      ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(50.0),
       ),
       elevation: 10.0,
+      minWidth: 150.0,
+      height: 45.0,
       );
   }
 }

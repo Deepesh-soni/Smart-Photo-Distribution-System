@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Button(
                       title: 'Sign Up',
                       onPressed: (){
-                        Navigator.pushNamed(context, SingupPage.id);
+                        Navigator.pushNamed(context, SignupPage.id);
                       },
                     ),
                   ],       

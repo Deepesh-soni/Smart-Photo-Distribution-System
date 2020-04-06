@@ -3,6 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:spds/Constants.dart';
 import 'ImageCard.dart';
 import 'package:image_picker/image_picker.dart';
+import 'dart:async';
+import 'dart:io';
+import 'Button.dart';
+import 'HomeScreen.dart';
 
 class SignupPage2 extends StatefulWidget{
 
@@ -14,45 +18,47 @@ class SignupPage2 extends StatefulWidget{
 
 class _SignupPage2State extends State<SignupPage2> {
 
-  // File _image;
+  File _image;
 
-  // Future getImage() async {
-  //   var image = await ImagePicker.pickImage(source: ImageSource.camera);
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
 
-  //   setState(() {
-  //     _image = image;
-  //   });
-  // }
-
-
+    setState(() {
+      _image = image;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-
           Expanded(
-            flex: 1,
-            child: Stack(
-              alignment: AlignmentDirectional.bottomEnd,
-              children: <Widget>[
-                CircleAvatar(
-                  backgroundColor: Color(0x55FFFFFF),
-                  radius:80.0,
-                  backgroundImage: AssetImage("Images/dp.jpg"),
-                ),
+            flex: 2,
+            child: Center(
+              child: Stack(
+                alignment: AlignmentDirectional.bottomEnd,
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundColor: Color(0x55FFFFFF),
+                    radius:80.0,
+                    backgroundImage: _image==null
+                    ? AssetImage("Images/dp.jpg")
+                    :FileImage(_image),
+                  ),
 
-                IconButton(
-                  color: Colors.cyan,
-                  icon: Icon(
-                    FontAwesomeIcons.camera,
-                    color: Colors.white,
-                  ), 
-                  onPressed: (){}
-                )
-              ],
+                  IconButton(
+                    color: Colors.cyan,
+                    icon: Icon(
+                      FontAwesomeIcons.camera,
+                      color: Colors.white,
+                    ), 
+                    onPressed: getImage,
+                  )
+                ],
+              ),
             )
           ),
 
@@ -71,12 +77,6 @@ class _SignupPage2State extends State<SignupPage2> {
                     children: [
                       ImageCard(),
                       ImageCard(),
-                    ]
-                  ),
-
-                  TableRow(
-                    children: [
-                      ImageCard(),
                       ImageCard(),
                     ]
                   ),
@@ -85,9 +85,27 @@ class _SignupPage2State extends State<SignupPage2> {
                     children: [
                       ImageCard(),
                       ImageCard(),
+                      ImageCard(),
                     ]
-                  )
+                  ),
                 ]
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text("To improve your experience, choose images with different lighting conditions."),
+          ),
+
+          Expanded(
+            flex: 1,
+            child: Center(
+              child: Button(
+                title: 'Sign Up',
+                onPressed: (){
+                  Navigator.pushNamed(context, HomeScreen.id);
+                },
               ),
             ),
           ),

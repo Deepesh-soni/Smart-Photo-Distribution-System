@@ -30,6 +30,9 @@ dependencies:
   multi_image_picker: ^4.6.3
   image_picker: ^0.6.3+4
   shadow: ^0.1.5
+  animated_text_kit: ^2.0.0
+  curved_drawer: ^0.1.2
+
 
 dev_dependencies:
   flutter_test:

@@ -4,8 +4,7 @@ import 'welcomeScreen.dart';
 import 'LoginScreen.dart';
 import 'HomeScreen.dart';
 import 'Constants.dart';
-import 'SignupPage.dart';
-import 'SignupPage2.dart';
+import 'package:spds/SignUpPage.dart';
 
 
 void main() => runApp(SPDS());
@@ -19,14 +18,13 @@ class SPDS extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor:Color(0xFFE76C6A), 
       ),
-      initialRoute: SignupPage2.id,
+      initialRoute: WelcomeScreen.id,
       routes: {
         LoginScreen.id: (context)=>LoginScreen(),
         HomeScreen.id: (context)=>HomeScreen(),
         WelcomeScreen.id: (context)=>WelcomeScreen(),
         UploadScreen.id: (context)=>UploadScreen(),
-        SignupPage.id: (context)=>SignupPage(),
-        SignupPage2.id: (context)=>SignupPage2(),  
+        SignupPage.id: (context)=>SignupPage(), 
       },
     );
   }

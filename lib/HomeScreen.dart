@@ -5,6 +5,8 @@ import 'package:spds/UploadScreen.dart';
 import 'ImageList.dart';
 import 'ImageModel.dart';
 import 'dart:convert';
+import 'CustomDrawer.dart';
+import 'package:curved_drawer/curved_drawer.dart';
 
  
 class HomeScreen extends StatefulWidget {
@@ -40,24 +42,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: Container(
-        margin: EdgeInsets.all(8.0),
-          child: CircleAvatar(
+        actions: <Widget>[
+          Container(
+            margin: EdgeInsets.all(8.0),
+            child: CircleAvatar(
               backgroundImage: AssetImage("Images/pp.jpg"),
             ),
-        ),
-
-        actions: <Widget>[
-          Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: fetchImage,
-              );   
-            },
           ),
         ],
       ),
+      drawer: CustomDrawer(),
 
       body: ImageList(images:image),
 
@@ -72,7 +66,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Icon(FontAwesomeIcons.upload),
 
       ),
-
     );
   }
 }

@@ -6,27 +6,24 @@ import 'HomeScreen.dart';
 import 'Constants.dart';
 import 'package:spds/SignUpPage.dart';
 
-
 void main() => runApp(SPDS());
 
 class SPDS extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.light().copyWith(
         primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor:Color(0xFFE76C6A), 
+        scaffoldBackgroundColor: Color(0xFFE76C6A),
       ),
       initialRoute: WelcomeScreen.id,
       routes: {
-        LoginScreen.id: (context)=>LoginScreen(),
-        HomeScreen.id: (context)=>HomeScreen(),
-        WelcomeScreen.id: (context)=>WelcomeScreen(),
-        UploadScreen.id: (context)=>UploadScreen(),
-        SignupPage.id: (context)=>SignupPage(), 
+        LoginScreen.id: (context) => LoginScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        UploadScreen.id: (context) => UploadScreen(),
+        SignupPage.id: (context) => SignupPage(),
       },
     );
   }
 }
-

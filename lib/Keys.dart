@@ -26,7 +26,7 @@ class Keys extends StatelessWidget {
                 Navigator.pushNamed(context, SignupPage.id);
               },
             ),
-          ],                
+          ],
         ),
 
         SizedBox(height: 30.0),

@@ -3,18 +3,14 @@ import 'dart:async';
 import 'Constants.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 
-
-class UploadScreen extends StatefulWidget{
-
-  static final String id="Upload_Screen";
+class UploadScreen extends StatefulWidget {
+  static final String id = "Upload_Screen";
 
   @override
   _UploadScreenState createState() => _UploadScreenState();
 }
 
 class _UploadScreenState extends State<UploadScreen> {
-
-
   List<Asset> images = List<Asset>();
   //String _error;
 
@@ -37,9 +33,8 @@ class _UploadScreenState extends State<UploadScreen> {
               height: 300,
             ),
           );
-        }
-      ),
-    );
+        }),
+      );
     else
       return Container(
         color: Colors.white,
@@ -55,13 +50,12 @@ class _UploadScreenState extends State<UploadScreen> {
             Text(
               'NO IMAGE SELECTED YET',
               style: TextStyle(
-                fontWeight:FontWeight.bold,
+                fontWeight: FontWeight.bold,
               ),
             ),
             Text('Select images to upload'),
           ],
         ),
-        
       );
   }
 
@@ -93,61 +87,53 @@ class _UploadScreenState extends State<UploadScreen> {
     });
   }
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        actions: <Widget>[
-          Builder(
-            builder: (BuildContext context) {
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          actions: <Widget>[
+            Builder(builder: (BuildContext context) {
               return FlatButton(
-                child: Text("Upload",
+                child: Text(
+                  "Upload",
                   style: TextStyle(
-                    color:Colors.white,
+                    color: Colors.white,
                   ),
-                ), 
-                onPressed: () {},
-                );
-            }
-          ),
-        ],
-      ),
-
-      body: buildGridView(),
-
-      bottomNavigationBar: BottomAppBar(
-        color: kPrimaryColor,
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-
-              IconButton( 
-                onPressed: () {},
-                icon: Icon(
-                  Icons.camera,
-                  color: Colors.white,
                 ),
-                iconSize: 30.0,
-              ),
-
-              IconButton( 
-                onPressed: loadAssets,
-                icon: Icon(
-                  Icons.image,
-                  color: Colors.white,
-                ),
-                iconSize: 30.0,
-              ), 
-            ],
-          ),
+                onPressed: () {},
+              );
+            }),
+          ],
         ),
-      )
-    );
+        body: buildGridView(),
+        bottomNavigationBar: BottomAppBar(
+          color: kPrimaryColor,
+          child: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.camera,
+                    color: Colors.white,
+                  ),
+                  iconSize: 30.0,
+                ),
+                IconButton(
+                  onPressed: loadAssets,
+                  icon: Icon(
+                    Icons.image,
+                    color: Colors.white,
+                  ),
+                  iconSize: 30.0,
+                ),
+              ],
+            ),
+          ),
+        )
+      );
   }
 }

@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'LoginScreen.dart';
 
 class CustomDrawer extends StatelessWidget{
+
+  final _auth = FirebaseAuth.instance;
+
+  void getCurrentUser() async {
+    try {
+      final user = await _auth.currentUser();
+      if (user == null) {
+        print("Successfully logged out");
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,7 +27,6 @@ class CustomDrawer extends StatelessWidget{
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  //Colors.white,
                   Color(0xFFE76C6A),
                   Color(0xFFFF5A55),
                 ])
@@ -49,7 +64,11 @@ class CustomDrawer extends StatelessWidget{
             leading: Icon(FontAwesomeIcons.lock),
             title: Text("Log Out"),
             trailing: Icon(Icons.chevron_right),
-            onTap: (){},
+            onTap: (){
+              _auth.signOut();
+              getCurrentUser();
+              Navigator.pushNamed(context, LoginScreen.id);
+            },
           ),
         ],
       )

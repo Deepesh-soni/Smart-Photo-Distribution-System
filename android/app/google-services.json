@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "382249839236",
+    "firebase_url": "https://smart-photo-distribution.firebaseio.com",
+    "project_id": "smart-photo-distribution",
+    "storage_bucket": "smart-photo-distribution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382249839236:android:d5f6fa63ff3217ce3070d1",
+        "android_client_info": {
+          "package_name": "com.DeepeshSoni.spds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382249839236-aqd8a053soictffp6f516k8jacl63mga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOI3u9j2v6agbjDUNWUyQ9VlV-a_HDf0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382249839236-aqd8a053soictffp6f516k8jacl63mga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
